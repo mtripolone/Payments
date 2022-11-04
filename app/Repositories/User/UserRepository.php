@@ -22,11 +22,11 @@ class UserRepository implements UserRepositoryContract
             'email' => $payload['email'],
             'profile' => $payload['profile'],
             'document' => $payload['document'],
-            'password' => $payload['password']
+            'password' => $payload['password'],
         ]);
 
         $user->wallet()->create([
-            'balance' => 0
+            'balance' => 0,
         ]);
 
         return $user;
@@ -43,12 +43,10 @@ class UserRepository implements UserRepositoryContract
             $payload['email']
         )->first();
 
-        if (!$user || !Hash::check($payload['password'], $user->password)) {
+        if (! $user || ! Hash::check($payload['password'], $user->password)) {
             throw new Exception('Credenciais Invalidas', Response::HTTP_BAD_REQUEST);
         }
 
         return $user;
     }
 }
-
-

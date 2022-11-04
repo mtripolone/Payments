@@ -23,7 +23,7 @@ class AuthRequest extends FormRequest
         return [
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
-            'profile' => ['required', Rule::in(['user' , 'retailer'])],
+            'profile' => ['required', Rule::in(['user', 'retailer'])],
             'email' => ['required', 'string', 'email', 'unique:users,email'],
             'document' => ['required', 'string', 'unique:users,document'],
             'password' => ['required', 'string'],

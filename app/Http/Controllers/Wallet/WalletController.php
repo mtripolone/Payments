@@ -19,9 +19,8 @@ class WalletController extends Controller
 
         $transactions = $this->repository->where('from_id', $request->wallet)->get();
 
-        foreach ($transactions as $transaction)
-        {
-            $valueFormated = number_format($transaction['value'], 2, ',' ,'.');
+        foreach ($transactions as $transaction) {
+            $valueFormated = number_format($transaction['value'], 2, ',', '.');
             $historic[] = "Transaction Type: {$transaction['payments']} of $ {$valueFormated}";
         }
 

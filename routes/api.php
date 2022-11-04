@@ -23,9 +23,8 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
 
 // Rotas Privadas
-Route::group(['middleware' => ['auth:sanctum']], function() {
+Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/transaction', [TransferController::class, 'transference']);
     Route::post('/payday', [PayDayController::class, 'payDay']);
     Route::post('/statement', [WalletController::class, 'userTransactions']);
 });
-

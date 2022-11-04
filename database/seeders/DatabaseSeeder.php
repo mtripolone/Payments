@@ -19,10 +19,10 @@ class DatabaseSeeder extends Seeder
         User::factory(1)->create();
 
         User::factory()->create([
-             'first_name' => 'Admin',
-             'last_name' => 'Geral',
-             'profile' => 'user',
-             'email' => 'admin@admin.com',
-         ]);
+            'first_name' => 'Admin',
+            'last_name' => 'Geral',
+            'profile' => 'user',
+            'email' => 'admin@admin.com',
+        ]);
     }
 }

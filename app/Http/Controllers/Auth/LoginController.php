@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\LoginRequest;
 use App\Repositories\User\UserRepository;
-use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 class LoginController extends Controller
@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         $response = [
             'user ' => $user,
-            'token' => $token
+            'token' => $token,
         ];
 
         return response($response, Response::HTTP_OK);

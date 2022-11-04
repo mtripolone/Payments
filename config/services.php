@@ -37,6 +37,6 @@ return [
 
     'notification' => [
         'address' => env('NOTIFICATION_ADDRESS'),
-    ]
+    ],
 
 ];

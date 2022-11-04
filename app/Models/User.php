@@ -55,6 +55,7 @@ class User extends Authenticatable
     ];
 
     protected $with = ['wallet'];
+
     /**
      * The accessors to append to the model's array form.
      *
@@ -69,13 +70,13 @@ class User extends Authenticatable
      */
     public function getFullNameAttribute(): string
     {
-        return  $this->first_name . ' ' . $this->last_name;
+        return  $this->first_name.' '.$this->last_name;
     }
 
     /**
      * Encript password by default
-     * @param $value
      *
+     * @param $value
      * @return void
      */
     public function setPasswordAttribute($value): void

@@ -47,7 +47,7 @@ class WalletService
             // Payer Wallet Transfer
             $payer->wallet->balance -= $transfer['value'];
             $payer->wallet->save();
-            $this->invoceService->saveInvoceTransaction($transfer['value'], $payer ,$payee);
+            $this->invoceService->saveInvoceTransaction($transfer['value'], $payer, $payee);
 
             // Payee Wallet Transfer
             $payee->wallet->balance += $transfer['value'];
@@ -57,6 +57,7 @@ class WalletService
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
+
             return response($e->getMessage(),
                 $e->getCode() == 0
                 ? Response::HTTP_NOT_FOUND
@@ -68,7 +69,6 @@ class WalletService
             $this->notifyService->notifyClient();
 
             return response('Transação Efetuada com Sucesso', Response::HTTP_OK);
-
         } catch (Exception $e) {
             return response('Transação Efetuada com Sucesso, porém, O Envio de e-mail está indisponivel',
                 Response::HTTP_INTERNAL_SERVER_ERROR);
