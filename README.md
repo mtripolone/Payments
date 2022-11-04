@@ -55,7 +55,7 @@ docker exec -it app-payments composer start-app
 7. Acessar no navegador:
 
 ```
-http://localhost/8005
+http://localhost:8005
 ```
 
 By - Matheus Tripolone

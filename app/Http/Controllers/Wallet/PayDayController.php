@@ -16,7 +16,7 @@ class PayDayController extends Controller
 
     public function payDay(Request $request)
     {
-        $walletUser = $this->repository->findOrFail($request->user);
+        $walletUser = $this->repository->findOrFail($request->wallet);
         $walletUser->balance += $request->payday;
         $walletUser->save();
 

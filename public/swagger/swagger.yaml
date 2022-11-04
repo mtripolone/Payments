@@ -164,7 +164,7 @@ paths:
             schema:
               type: object
               properties:
-                user:
+                wallet:
                   type: integer
                   description: 'Usuário para transferência'
                   example: 1
